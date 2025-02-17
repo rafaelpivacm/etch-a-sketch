@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #7e7e7e81;
+    display: flex;
+    align-items: center;
+}
+
+.options {
+    height: 600px;
+    width: 30%;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square {
+    flex: 1 0 calc(100% / 16);
+    box-sizing: border-box;
+    border: 1px solid white;
+    background-color: black;
+}
