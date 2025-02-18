@@ -2,9 +2,34 @@
 const container = document.querySelector('.container');
 const input = document.querySelector('input');
 const confBtn = document.querySelector('#confirm');
+const closeBtn = document.querySelector('#close');
+const colorBtn = document.querySelectorAll('.color');
+const options = document.querySelector('.options');
+const modalContent = document.querySelector('.modal-content');
 
 // Variáveis
 let colorStatus = 'white';
+
+// Mudar de cor
+colorBtn.forEach(color => {
+    color.addEventListener('click', () => {
+        resetColors();
+        options.style.backgroundColor = color.style.backgroundColor;
+        modalContent.style.backgroundColor = color.style.backgroundColor;
+        colorStatus = color.style.backgroundColor;
+        confBtn.style.backgroundColor = color.style.backgroundColor;
+        closeBtn.style.backgroundColor = color.style.backgroundColor;
+    });
+});
+
+// Reseta as cores
+function resetColors() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.style.backgroundColor = 'black';
+        square.style.opacity = "1";
+    });
+}
 
 // Cria um grid de 16x16
 for (let i = 0; i < 256; i++) {
@@ -16,7 +41,6 @@ for (let i = 0; i < 256; i++) {
     square.style.backgroundColor = 'black';
     square.addEventListener('mouseover', () => {
         if(square.style.backgroundColor === "black") {
-            console.log(square.style.opacity);
             square.style.backgroundColor = `${colorStatus}`;
             square.style.opacity = "0.1";
         } else if (square.style.opacity === "1") {
@@ -44,7 +68,6 @@ confBtn.addEventListener('click', ()=>{
         square.style.backgroundColor = 'black';
         square.addEventListener('mouseover', () => {
             if(square.style.backgroundColor === "black") {
-                console.log(square.style.opacity);
                 square.style.backgroundColor = `${colorStatus}`;
                 square.style.opacity = "0.1";
             } else if (square.style.opacity === "1") {

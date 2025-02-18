@@ -15,12 +15,22 @@
             <input type="number" id="grid-size" placeholder="1-100">
             <button id="confirm">Confirm</button>
         </div>
+        <h3>Choose a color:</h3>
+        <div class="colors">
+            <button class="color" style="background-color: red; border-radius: 100%;"></button>
+            <button class="color" style="background-color: green; border-radius: 100%;"></button>
+            <button class="color" style="background-color: blue; border-radius: 100%;"></button>
+            <button class="color" style="background-color: yellow; border-radius: 100%;"></button>
+            <button class="color" style="background-color: purple; border-radius: 100%;"></button>
+            <button class="color" style="background-color: orange; border-radius: 100%;"></button>
+            <button class="color" style="background-color: white; border-radius: 100%;"></button>
+        </div>
     </div>
     <!-- O modal de alerta personalizado -->
     <div id="alerta" class="modal">
         <div class="modal-content">
             <p id="mensagem"></p>
-            <button onclick="fecharAlerta()">OK</button>
+            <button id="close" onclick="fecharAlerta()">OK</button>
         </div>
     </div>
     <div class="container"></div>
